@@ -2,6 +2,10 @@ resources:
   jobs:
     PL_DP_ATTENDANCE:
       name: PL_DP_ATTENDANCE
+      schedule:
+        quartz_cron_expression: 12 0 9 * * ?
+        timezone_id: Asia/Calcutta
+        pause_status: UNPAUSED
       tasks:
         - task_key: ts_source2landing
           notebook_task:
